@@ -1,4 +1,3 @@
-# patern drawing app
 number = int(input("Enter the size of the pattern: "))
 c = 1
 
