@@ -2,9 +2,8 @@ task = input("Enter your task: ")
 time_bound = input("Is the task time bound ? (yes/no): ").lower()
 task_priority = input("Priority").lower()
 
-while True:
 
-    match task_priority:
+match task_priority:
 
         case 'high':
             message = "is a high priority task that requires immediate attention today!"
@@ -22,15 +21,15 @@ while True:
             print("Invalid priority")
             break
 
-    if time_bound == 'yes':
+if time_bound == 'yes':
         print("Reminder:", task, message)
         break
 
 
-    elif time_bound == 'no':
+elif time_bound == 'no':
         print("Note:", task, message)
         break
 
-    else:
+else:
         print("Invalid time_bound")
         break
