@@ -1,35 +1,28 @@
 task = input("Enter your task: ")
-time_bound = input("Is the task time bound ? (yes/no): ").lower()
-task_priority = input("Priority").lower()
-
+task_priority = input("Priority (high/medium/low): ").lower()
+time_bound = input("Is it time-bound? (yes/no): ").lower()
 
 match task_priority:
 
         case 'high':
             message = "is a high priority task that requires immediate attention today!"
-            break
 
         case 'medium':
             message = "is a medium priority task, do it not lather than tomorrow"
-            break
 
         case 'low':
             message = "is a low priority task. Consider completing it when you have free time."
-            break
 
         case _:
             print("Invalid priority")
-            break
+            
 
 if time_bound == 'yes':
-        print("Reminder:", task, message)
-        break
+        print(f"Reminder: '{task}' {message}")
 
 
 elif time_bound == 'no':
-        print("Note:", task, message)
-        break
+        print(f"Note: '{task}' {message}")
 
 else:
         print("Invalid time_bound")
-        break
