@@ -1,17 +1,10 @@
-
-
-
-def perform_operation(operation, num1, num2): #function definition
-  #body
-
-  result = 'Invalid'
+def perform_operation(num1, num2, operation):
    
-  match operation: #(+ * - /)
+  match operation:
 
     case 'add':
       return num1 + num2
       
-    
     case 'subtract':
       return num1 - num2
 
