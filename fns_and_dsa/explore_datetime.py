@@ -1,13 +1,14 @@
-import datetime as timepac
+from datetime import datetime
+from datetime import timedelta
 
 def display_current_datetime():
 
-  date_now = timepac.datetime.now()
+  date_now = datetime.now()
 
   return date_now
 
 def calculate_future_date(days_to_be_added, current_date):
-  days_to_be_added_date = timepac.timedelta(days = days_to_be_added)
+  days_to_be_added_date = timedelta(days = days_to_be_added)
   end_date = current_date + days_to_be_added_date
 
   return end_date
