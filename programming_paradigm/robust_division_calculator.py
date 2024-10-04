@@ -7,18 +7,14 @@ def safe_divide(numerator, denominator):
     result = numerator / denominator
 
   except ZeroDivisionError:
-    print('Error: Cannot divide by zero.')
-    return ''
-  
+    return ('Error: Cannot divide by zero.')
+
   except ValueError:
-    print('Error: Please enter numeric values only.')
-    return ''
+    return ('Error: Please enter numeric values only.')
 
   except Exception:
-    print('Something is wrong')
-    return ''
+    return ('Something is wrong')
 
   else:
-    print(f'The result of the division is {result}')
-    return ''
-  
+    return (f'The result of the division is {result}')
+   
