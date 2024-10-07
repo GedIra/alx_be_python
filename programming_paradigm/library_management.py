@@ -1,62 +1,74 @@
 class Book:
-
   def __init__(self, title, author):
-
-    self.title = title
     self.author = author
+    self.title = title
     self._is_checked_out = False
 
-  def checkout(self):
+  def check_out_book(self):
     if not self._is_checked_out:
       self._is_checked_out = True
       return True
-    return False
 
-  def checkin(self):
+    else:
+      return False
+
+  def return_book(self):
     if self._is_checked_out:
       self._is_checked_out = False
       return True
-    return False
 
-  def is_available(self):
-      return not self._is_checked_out
+    else:
+      return False
 
+  def availability(self):
+    if not self._is_checked_out:
+      return True
+    else:
+      return False
+  
 class Library:
 
   def __init__(self):
     self._books = []
-
+  
   def add_book(self, book):
-        self._books.append(book)
+    self._books.append(book)
+
+    return self._books
+
   
   def check_out_book(self, title):
-        for book in self._books:
-            if book.title == title:
-                if book.checkout():
-                    pass
-                else:
-                    pass
-                return
-        print(f"{title} not found in the library.")
+    for book in self._books:
+      if book.title == title:
+        if book.check_out_book():
+          #print(f"Checking out '{title}' book is successful ")
+          pass
+        else:
+          #print(f"Note: The book '{title}' has already been checked out")
+          pass
+        return
+    print(f'Error: The book {title} is not available in the library')
 
   def return_book(self, title):
-        for book in self._books:
-            if book.title == title:
-                if book.checkin():
-                    pass
-                else:
-                    pass
-                return
-        print(f"{title} not found in the library.")
+    for book in self._books:
+      if book.title == title:
+        if book.return_book():
+          #print(f"The '{book}' has been returned to the library")
+          pass
+        else:
+          #print(f"Warning: The book '{title} was not checked out")
+          pass
+        return
+    print(f"Error: This book '{title}', doesnt belong to your libary")
 
   def list_available_books(self):
-      available_books = [book for book in self._books if book.is_available()]
-      if available_books:
-          for book in available_books:
-              print(f"{book.title}, by {book.author}")
-      else:
-          print("No books available in the library.")
+    if len(self._books) > 0:
+      for book in self._books:
+        if book.availability():
+          print(f"{book.title} by {book.author}")
+    else:
+      print('Note: No book available in the library')
+      
 
-
-
+  
 
